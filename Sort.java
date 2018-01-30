@@ -70,7 +70,34 @@ public class Sort {
         }
 
     }
+    public void quickSort(int[]arr,int p , int r){
+        /**
+         * inplace
+         * average O(nlogn) but worstcase O(n^2)
+         * 
+         */
+        if(p>=r) return;
+        int q = partition(arr,p,r);
+        quickSort(arr, p, q-1);
+        quickSort(arr, q+1,r);
+    }
+    public int partition(int[] arr, int p, int r){
+        int q = p;
+        for(int u=p; u <= r-1 ;u++){
+            if(arr[u] <= arr[r]){ 
+                swap(arr,q,u);
+                q++;
+            }
+        }
+        swap(arr, q, r);
+        return q;
+    }
+    public void swap(int[] arr,int a,int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] =temp;
 
+    }
     public void printArray(int[] arr){
         for(int i = 0 ; i <arr.length ; i++)
             System.out.printf("%d ",arr[i]);
