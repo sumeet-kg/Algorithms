@@ -34,7 +34,7 @@ public class Sort {
                 if(arr[j] < arr[index]) index = j;
             }
             //swaping
-            int temp = arr[i];
+             int temp = arr[i];
             arr[i] =arr[index];
             arr[index] = temp;
         }
@@ -98,6 +98,8 @@ public class Sort {
         arr[b] =temp;
 
     }
+
+    //TODO: Radiax sort
     public void printArray(int[] arr){
         for(int i = 0 ; i <arr.length ; i++)
             System.out.printf("%d ",arr[i]);
