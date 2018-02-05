@@ -28,7 +28,10 @@ public class Graph {
                 }
             }
         }
-        }
+    }
+        //TODO: DFS
+        //TODO: Topological sort
+        //TODO: PERT
 
     public ArrayList<ArrayList<Integer>> DAG_adjList(int[][] arr){
 
