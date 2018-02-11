@@ -30,9 +30,27 @@ public class Graph {
         }
     }
         //TODO: DFS
-        //TODO: Topological sort
         //TODO: PERT
 
+    public void topologicalSort(ArrayList<ArrayList<Integer>> adj){
+        /**
+         * Used in DAG only
+         */
+        int v = adj.size();
+        boolean[] marked = new boolean[n];
+        Stack<Integer> repost = new Stack<Integer>(); // reverse postorder of Grapy
+        for(int k = 0 ; k < n ; k++){
+            if(!marked[v]) ts_DFS(adj,marked,repost,k);
+        }
+
+    }
+    public void ts_DFS( ArrayList<ArrayList<Integer>> adj, boolean[] marked,Stack<Integer> repost,int v ){
+        marked[v]=true;
+        for(int w : adj.get(v)){
+            if(!marked[w]) ts_DFS(adj, marked, repost, w);
+            repost.push(v);
+        }
+    }
     public ArrayList<ArrayList<Integer>> DAG_adjList(int[][] arr){
 
         ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
