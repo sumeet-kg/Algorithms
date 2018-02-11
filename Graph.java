@@ -76,6 +76,8 @@ public class Graph {
             if(!marked[w]) ts_DFS(adj, marked, repost, w);
         }
     }
+
+    //extra helpher functions
     public ArrayList<ArrayList<Integer>> DAG_adjList(int[][] arr){
 
         ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
@@ -102,6 +104,7 @@ public class Graph {
         }
         return adj;
     }
+    
 
 
 }
